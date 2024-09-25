@@ -73,7 +73,7 @@ function App() {
                 onToggleClick={handleToggleTodo}
             />
             <input type="text" value={title} onChange={handleTitleChange} />
-            <button onClick={handleAddTodo}>등록.</button>
+            <button onClick={handleAddTodo}>등록</button>
         </>
     );
 }
@@ -87,6 +87,7 @@ type TodoListProps = {
 function TodoList({ todoList, onDeleteClick, onToggleClick }: TodoListProps) {
     return (
         <div>
+            <h1>Todo List</h1>
             {todoList.map((todo) => (
                 <TodoItem
                     key={todo.id}
@@ -113,8 +114,9 @@ function TodoItem({
     return (
         <>
             <div>
-                <div>id : {id}</div>
-                <div
+                <div>title : {title}</div>
+                <div>completed : {`${completed}`}</div>
+                <button
                     onClick={() =>
                         onToggleClick({
                             id,
@@ -122,9 +124,8 @@ function TodoItem({
                         })
                     }
                 >
-                    title : {title}
-                </div>
-                <div>completed : {`${completed}`}</div>
+                    complete
+                </button>
                 <button onClick={() => onDeleteClick(id)}>삭제</button>
             </div>
             ---
