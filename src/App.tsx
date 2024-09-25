@@ -73,7 +73,7 @@ function App() {
                 onToggleClick={handleToggleTodo}
             />
             <input type="text" value={title} onChange={handleTitleChange} />
-            <button onClick={handleAddTodo}>등록</button>
+            <button onClick={handleAddTodo}>등록.</button>
         </>
     );
 }
